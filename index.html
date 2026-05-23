@@ -3,140 +3,663 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mazhar Ali | Software Engineering Student</title>
+
+<title>Mazhar Ali | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0f172a;
-    color: #f1f5f9;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header {
-    text-align: center;
-    padding: 80px 20px;
+html{
+    scroll-behavior:smooth;
 }
 
-header h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+body{
+    font-family:'Poppins',sans-serif;
+    background:#020617;
+    color:white;
+    overflow-x:hidden;
 }
 
-header p {
-    font-size: 18px;
-    color: #94a3b8;
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
 }
 
-section {
-    padding: 60px 20px;
-    max-width: 950px;
-    margin: auto;
+::-webkit-scrollbar-thumb{
+    background:#38bdf8;
+    border-radius:20px;
 }
 
-h2 {
-    border-bottom: 2px solid #38bdf8;
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 30px;
+/* BACKGROUND GLOW */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#0ea5e9;
+    filter:blur(180px);
+    top:-200px;
+    left:-150px;
+    opacity:0.15;
+    z-index:-1;
 }
 
-.skills span {
-    display: inline-block;
-    background: #1e293b;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 8px;
+body::after{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#9333ea;
+    filter:blur(180px);
+    bottom:-150px;
+    right:-150px;
+    opacity:0.15;
+    z-index:-1;
 }
 
-.project {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 10%;
+    backdrop-filter:blur(14px);
+    background:rgba(2,6,23,0.75);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    z-index:1000;
 }
 
-.project a {
-    color: #38bdf8;
-    text-decoration: none;
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#38bdf8;
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #020617;
-    margin-top: 40px;
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
 }
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:85px;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero p{
+    color:#94a3b8;
+    font-size:20px;
+    line-height:1.8;
+    max-width:700px;
+    margin:auto;
+}
+
+.hero-buttons{
+    margin-top:40px;
+}
+
+.hero-buttons a{
+    display:inline-block;
+    margin:10px;
+    padding:15px 32px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#38bdf8;
+    color:#020617;
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(56,189,248,0.4);
+}
+
+.btn-secondary{
+    border:2px solid #38bdf8;
+    color:#38bdf8;
+}
+
+.btn-secondary:hover{
+    background:#38bdf8;
+    color:#020617;
+}
+
+/* SECTIONS */
+
+section{
+    padding:110px 10%;
+}
+
+.section-title{
+    font-size:42px;
+    margin-bottom:50px;
+    position:relative;
+    display:inline-block;
+}
+
+.section-title::after{
+    content:"";
+    width:60%;
+    height:4px;
+    background:#38bdf8;
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    border-radius:20px;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-card{
+    background:rgba(30,41,59,0.65);
+    padding:40px;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,0.06);
+    backdrop-filter:blur(15px);
+}
+
+.about-card p{
+    line-height:2;
+    color:#cbd5e1;
+    font-size:17px;
+}
+
+.about-stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.stat-box{
+    background:#111827;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.stat-box:hover{
+    transform:translateY(-8px);
+    border:1px solid #38bdf8;
+}
+
+.stat-box h2{
+    font-size:38px;
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+/* SKILLS */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:#111827;
+    padding:22px;
+    border-radius:16px;
+    text-align:center;
+    transition:0.3s;
+    border:1px solid transparent;
+}
+
+.skill:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+    background:#1e293b;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:linear-gradient(145deg,#111827,#1e293b);
+    padding:35px;
+    border-radius:24px;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+.project-card::before{
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:#38bdf8;
+    filter:blur(120px);
+    top:-100px;
+    right:-100px;
+    opacity:0.15;
+}
+
+.project-card:hover{
+    transform:translateY(-12px);
+}
+
+.project-card h3{
+    font-size:25px;
+    margin-bottom:18px;
+}
+
+.project-card p{
+    color:#cbd5e1;
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+.project-card a{
+    color:#38bdf8;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* UPCOMING */
+
+.upcoming{
+    background:linear-gradient(145deg,#111827,#1e293b);
+    padding:50px;
+    border-radius:28px;
+    border:1px solid rgba(255,255,255,0.05);
+    position:relative;
+    overflow:hidden;
+}
+
+.upcoming::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:#9333ea;
+    filter:blur(140px);
+    top:-100px;
+    right:-100px;
+    opacity:0.12;
+}
+
+.upcoming p{
+    color:#cbd5e1;
+    line-height:2;
+    margin-top:15px;
+}
+
+.tech-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
+}
+
+.tech-stack span{
+    background:#0f172a;
+    padding:12px 18px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    margin-top:80px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        gap:20px;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Mazhar Ali</h1>
-    <p>Software Engineering Student | C++ & Java Developer</p>
-</header>
+<!-- NAVBAR -->
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        I am a Software Engineering student with a strong foundation in C++ and Java programming.
-        I have developed academic projects using C++, HTML, and CSS.
-        Currently, I am expanding my knowledge in Object-Oriented Programming (OOP),
-        Database Systems, and Data Structures.
-    </p>
-</section>
+<nav>
 
-<section>
-    <h2>Skills</h2>
-    <div class="skills">
-        <span>C++</span>
-        <span>Java</span>
-        <span>OOP</span>
-        <span>Data Structures</span>
-        <span>SQL</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>MS Word</span>
-        <span>MS Excel</span>
-        <span>MS Access</span>
-        <span>PowerPoint</span>
-        <span>Git & GitHub</span>
-    </div>
-</section>
+    <div class="logo">Mazhar.</div>
 
-<section>
-    <h2>Projects</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#future">Future Project</a></li>
+    </ul>
 
-    <div class="project">
-        <h3>C++ Management System</h3>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Software Engineer <br>
+            <span>& Creative Developer</span>
+        </h1>
+
         <p>
-            A console-based C++ application developed using structured programming
-            and file handling concepts.
+            Passionate about software development, problem solving,
+            Java applications, databases, and modern web technologies.
+            Currently building projects to improve my skills in full stack development.
         </p>
-        <a href="https://github.com/SyntaxByMazhar" target="_blank">View on GitHub →</a>
-    </div>
 
-    <div class="project">
-        <h3>HTML & CSS Web Project</h3>
-        <p>
-            Front-end web development project using HTML and CSS.
-        </p>   
-         <a href = "https://github.com/SyntaxByMazhar/Student-dashboard-html-css" target =""_blank>View on GitHub →</a>
-    </div>
+        <div class="hero-buttons">
 
-    <div class="project">
-        <h3>OOP & Database Project (In Progress)</h3>
-        <p>
-            Academic project currently under development as part of coursework.
-            Uploading after mid-semester.
-        </p>
+            <a href="https://github.com/SyntaxByMazhar"
+               target="_blank"
+               class="btn-primary">
+               GitHub Profile
+            </a>
+
+            <a href="#projects"
+               class="btn-secondary">
+               Explore Projects
+            </a>
+
+        </div>
+
     </div>
 
 </section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+
+        <div class="about-card">
+
+            <p>
+                I am a Software Engineering student passionate about programming,
+                software architecture, and database systems.
+            </p>
+
+            <br>
+
+            <p>
+                I enjoy building Java applications, solving programming problems,
+                and creating modern UI designs using HTML and CSS.
+            </p>
+
+            <br>
+
+            <p>
+                Currently learning advanced Object-Oriented Programming,
+                Database Management Systems, JDBC, and Full Stack Development.
+            </p>
+
+        </div>
+
+        <div class="about-stats">
+
+            <div class="stat-box">
+                <h2>3+</h2>
+                <p>Projects</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>10+</h2>
+                <p>Technologies</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>2026</h2>
+                <p>Learning Journey</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>∞</h2>
+                <p>Growth Mindset</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill">C++</div>
+        <div class="skill">Java</div>
+        <div class="skill">OOP</div>
+        <div class="skill">Data Structures</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">JDBC</div>
+        <div class="skill">Java Swing</div>
+        <div class="skill">Problem Solving</div>
+        <div class="skill">Database Systems</div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+            <h3>Student Dashboard UI</h3>
+
+            <p>
+                Responsive front-end dashboard built using HTML and CSS
+                with clean layout, Flexbox, and Grid concepts.
+            </p>
+
+            <a href="https://github.com/SyntaxByMazhar/Student-dashboard-html-css"
+               target="_blank">
+               View Project →
+            </a>
+
+        </div>
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            <h3>Simple Habit Tracker</h3>
+
+            <p>
+                Java Swing and MySQL based productivity application
+                featuring login system, XP levels, rewards, streaks,
+                and database connectivity.
+            </p>
+
+            <a href="https://github.com/SyntaxByMazhar/SimpleHabitTracker"
+               target="_blank">
+               View Project →
+            </a>
+
+        </div>
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+            <h3>C++ Management System</h3>
+
+            <p>
+                Console-based C++ application developed using structured programming,
+                file handling, and modular concepts.
+            </p>
+
+            <a href="https://github.com/SyntaxByMazhar"
+               target="_blank">
+               View Project →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FUTURE PROJECT -->
+
+<section id="future">
+
+    <h2 class="section-title">Future Project</h2>
+
+    <div class="upcoming">
+
+        <h3>Upcoming Full Stack Application</h3>
+
+        <p>
+            Currently planning a complete full stack project that combines
+            front-end design, backend programming, database systems,
+            authentication, and CRUD operations.
+        </p>
+
+        <p>
+            The project will focus on real-world software development concepts,
+            responsive UI, and database-driven functionality.
+        </p>
+
+        <div class="tech-stack">
+
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Java</span>
+            <span>MySQL</span>
+            <span>JDBC</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
 
 <footer>
-    <p>© 2026 Mazhar Ali | Connect on LinkedIn & GitHub</p>
+
+    <p>
+        © 2026 Mazhar Ali • Software Engineering Student
+    </p>
+
 </footer>
 
 </body>
